@@ -12,7 +12,9 @@ public class BattleState : StateBase
     public override void EnterState()
     {
         base.EnterState();
-        
+
+        character.StartBattle();
+
         Debug.Log(character.name + " is battling.");
     }
 

@@ -13,6 +13,8 @@ public class IdleState : StateBase
     {
         base.EnterState();
 
+        character.StartIdle();
+
         Debug.Log(character.name + " is idle.");
     }
 

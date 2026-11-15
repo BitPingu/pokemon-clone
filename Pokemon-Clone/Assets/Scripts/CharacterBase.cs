@@ -19,23 +19,6 @@ public class CharacterBase : MonoBehaviour
     public int CurrentDefence { get; set; }
     public int RewardExp = 0;
 
-    // Singleton instance
-    public static CharacterBase Instance { get; private set; }
-
-    protected virtual void Awake()
-    {
-        // Make sure only one instance
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     protected virtual void Start()
     {
         // set parameters
@@ -64,7 +47,11 @@ public class CharacterBase : MonoBehaviour
         StateMachine.ChangeState(newState);
     }
 
-    public virtual void Idle() {}
+    public virtual void StartIdle() { }
+
+    public virtual void Idle() { }
+
+    public virtual void StartBattle() { }
 
     public virtual void Battle() { }
 }

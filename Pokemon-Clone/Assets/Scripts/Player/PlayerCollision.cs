@@ -11,8 +11,11 @@ public class PlayerCollision : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("WildPokemon"))
+        if(other.CompareTag("WildPokemon") && other.GetComponent<EnemyBase>())
         {
+            // Save enemy
+            DontDestroyOnLoad(other.GetComponent<EnemyBase>());
+
             //Start Battle
             GameManager.Instance.EventSender.EnterBattleEventSend();
         }
