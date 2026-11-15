@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     //Variables to keep track of
     // [SerializeField] private bool isBattling;
     [SerializeField] private PlayerBase player;
+    private Vector3 playerSavedPos;
 
     //Properties
     public SO_EventSender EventSender { get => eventSender; }
@@ -61,8 +62,12 @@ public class GameManager : MonoBehaviour
     private void ExitBattle()
     {
         // isBattling = false;
-        Debug.Log("load");
+        Debug.Log("GameManager - Exiting Battle Scene");
         // eventSender.EnableInputEventSend(true);
+        SceneManager.LoadScene("Overworld");
+
+        // restore saved position
+        player.transform.position = player.GetComponent<PlayerCollision>().PlayerSavedPos;
     }
 
     //Getters and Setters

@@ -86,7 +86,11 @@ public class PlayerBase : CharacterBase
 
             if (inputManager.PressedRunThisFrame())
             {
-                Debug.Log("run");
+                Debug.Log("Got away safely!");
+                _prompt = false;
+
+                // End Battle
+                BattleManager.Instance.End();
             }
         }
     }
