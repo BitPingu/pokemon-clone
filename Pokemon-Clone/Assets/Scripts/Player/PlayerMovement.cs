@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Classes and Components
-    private PlayerInputHandler inputManager;
+    [SerializeField] private PlayerInputHandler inputManager;
     private Rigidbody rb;
 
     //Other Variables
@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        inputManager = FindObjectOfType<PlayerInputHandler>();
-
+        // inputManager = FindObjectOfType<PlayerInputHandler>();
+        inputManager = GetComponentInChildren<PlayerInputHandler>();
     }
 
     private void Update()
