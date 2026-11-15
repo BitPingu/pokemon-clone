@@ -48,6 +48,8 @@ public class PlayerBase : CharacterBase
         base.Idle();
 
         // anything here is called during the idle state through update()
+        
+        // move player movement code here?
     }
 
     public override void StartBattle()
@@ -74,6 +76,7 @@ public class PlayerBase : CharacterBase
             if (!_prompt)
             {
                 // battle prompt
+                Debug.Log("It is the " + name + "'s turn");
                 Debug.Log("What will you do?");
                 Debug.Log("F: Fight | R: Run");
                 _prompt = true;
@@ -81,16 +84,29 @@ public class PlayerBase : CharacterBase
 
             if (inputManager.PressedFightThisFrame())
             {
-                Debug.Log("fight");
+                // Fight
+                BattleManager.Instance.Attack(this);
+                _prompt = false;
             }
 
             if (inputManager.PressedRunThisFrame())
             {
-                Debug.Log("Got away safely!");
-                _prompt = false;
+                // Run
+                if (UnityEngine.Random.Range(0, 2) == 0)
+                {
+                    Debug.Log("Got away safely!");
 
-                // End Battle
-                BattleManager.Instance.End();
+                    // End Battle
+                    BattleManager.Instance.End();
+                }
+                else
+                {
+                    Debug.Log("Couldn't get away!");
+
+                    // Pass turn
+                    BattleManager.Instance.PassTurn(this);
+                }
+                _prompt = false;
             }
         }
     }

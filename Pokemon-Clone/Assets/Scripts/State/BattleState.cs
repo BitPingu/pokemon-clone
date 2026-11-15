@@ -15,7 +15,7 @@ public class BattleState : StateBase
 
         character.StartBattle();
 
-        Debug.Log(character.name + " is battling.");
+        // Debug.Log(character.name + " is battling.");
     }
 
     // code that runs when we exit the state

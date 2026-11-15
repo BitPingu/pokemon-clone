@@ -16,15 +16,11 @@ public class CharacterBase : MonoBehaviour
     public int MaxHealth = 20;
     public int CurrentHealth { get; set; }
     public int Strength = 4;
-    public int Defence = 2;
-    public int CurrentDefence { get; set; }
-    public int RewardExp = 0;
 
     protected virtual void Start()
     {
         // set parameters
         CurrentHealth = MaxHealth;
-        CurrentDefence = Defence;
 
         // state machine
         StateMachine = new StateMachine();
@@ -55,5 +51,22 @@ public class CharacterBase : MonoBehaviour
     public virtual void StartBattle() { }
 
     public virtual void Battle() { }
+
+    public virtual void Damage(int damageAmount)
+    {
+        // prevent negative
+        int damageTaken = Mathf.Min(damageAmount, CurrentHealth);
+
+        Debug.Log(name + " took " + damageTaken + " damage");
+
+        // take damage
+        CurrentHealth -= damageTaken;
+
+        if (CurrentHealth <= 0)
+        {
+            Debug.Log(name + " fainted!");
+            // state automatically ends
+        }
+    }
 }
 

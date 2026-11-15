@@ -36,14 +36,17 @@ public class BattleManager : MonoBehaviour
         player.IsBattling = true;
         enemy.IsBattling = true;
 
+        Debug.Log("Player: " + player.CurrentHealth + "/" + player.MaxHealth
+            + " | Enemy: " + enemy.CurrentHealth + "/" + enemy.MaxHealth);
+
         // player always goes first (for now)
         player.IsTurn = true;
     }
 
     public void End()
     {
-        // remove enemy
-        // Moves the GameObject from the DontDestroyOnLoad scene back to the current active scene
+        // Move this enemy to the scene to destroy it
+        // (Currently enemies are always active in the overworld)
         SceneManager.MoveGameObjectToScene(enemy.gameObject, SceneManager.GetActiveScene());
 
         // reset battle vars
@@ -51,7 +54,76 @@ public class BattleManager : MonoBehaviour
         // Back to idle state
         player.IsBattling = false;
 
-        // End Battle
+        // Return to overworld
         GameManager.Instance.EventSender.ExitBattleEventSend();
+    }
+
+    public void PassTurn(CharacterBase passer)
+    {
+        Debug.Log("Player: " + player.CurrentHealth + "/" + player.MaxHealth
+            + " | Enemy: " + enemy.CurrentHealth + "/" + enemy.MaxHealth);
+
+        if (passer.GetComponent<PlayerBase>())
+        {
+            // now enemy's turn
+            player.IsTurn = false;
+            enemy.IsTurn = true;
+        }
+        else if (passer.GetComponent<EnemyBase>())
+        {
+            // now player's turn
+            enemy.IsTurn = false;
+            player.IsTurn = true;
+        }
+    }
+
+    public void Attack(CharacterBase attacker)
+    {
+        CharacterBase receiver = null;
+
+        if (attacker.GetComponent<PlayerBase>())
+        {
+            receiver = enemy;
+        }
+        else if (attacker.GetComponent<EnemyBase>())
+        {
+            receiver = player;
+        }
+
+        Debug.Log(attacker.name + " attacks!");
+
+        // Deal damage based on strength (atk) stat
+        int amount = attacker.Strength;
+
+        receiver.Damage(amount);
+
+        if (receiver.CurrentHealth > 0)
+        {
+            // Pass turn
+            PassTurn(attacker);
+        }
+        else
+        {
+            Debug.Log(attacker.name + " defeated " + receiver.name + "!");
+            
+            if (attacker.GetComponent<PlayerBase>())
+            {
+                // End Battle
+                End();
+            }
+            else if (attacker.GetComponent<EnemyBase>())
+            {
+                // Game over
+                Debug.Log("game over");
+
+                #if UNITY_EDITOR
+                    // Exits Play Mode in the Unity Editor
+                    UnityEditor.EditorApplication.isPlaying = false;
+                #else
+                    // Closes the built application
+                    Application.Quit();
+                #endif
+            }
+        }
     }
 }

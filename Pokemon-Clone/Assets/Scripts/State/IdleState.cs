@@ -15,7 +15,7 @@ public class IdleState : StateBase
 
         character.StartIdle();
 
-        Debug.Log(character.name + " is idle.");
+        // Debug.Log(character.name + " is idle.");
     }
 
     // code that runs when we exit the state
