@@ -7,6 +7,11 @@ public class PlayerBase : CharacterBase
     // Singleton instance
     public static PlayerBase Instance { get; private set; }
 
+    // battle vars
+    private bool _prompt;
+
+    private PlayerInputHandler inputManager;
+
     protected virtual void Awake()
     {
         // Make sure only one instance
@@ -19,6 +24,13 @@ public class PlayerBase : CharacterBase
         {
             Destroy(gameObject);
         }
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        inputManager = GetComponentInChildren<PlayerInputHandler>();
     }
 
     public override void StartIdle()
@@ -56,5 +68,26 @@ public class PlayerBase : CharacterBase
         base.Battle();
 
         // anything here is called during the battle state through update()
+
+        if (IsTurn)
+        {
+            if (!_prompt)
+            {
+                // battle prompt
+                Debug.Log("What will you do?");
+                Debug.Log("F: Fight | R: Run");
+                _prompt = true;
+            }
+
+            if (inputManager.PressedFightThisFrame())
+            {
+                Debug.Log("fight");
+            }
+
+            if (inputManager.PressedRunThisFrame())
+            {
+                Debug.Log("run");
+            }
+        }
     }
 }

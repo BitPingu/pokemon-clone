@@ -9,6 +9,7 @@ public class CharacterBase : MonoBehaviour
 
     // conditions
     public bool IsBattling { get; set; }
+    public bool IsTurn { get; set; }
 
     // battle stats
     public int Level = 1;

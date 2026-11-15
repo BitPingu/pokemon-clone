@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     
     //Variables to keep track of
     // [SerializeField] private bool isBattling;
-    [SerializeField] private CharacterBase player;
+    [SerializeField] private PlayerBase player;
 
     //Properties
     public SO_EventSender EventSender { get => eventSender; }
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
     private void EnterBattle()
     {
         // isBattling = true;
-        player.IsBattling = true;
         Debug.Log("GameManager - Loading Battle Scene");
         // eventSender.EnableInputEventSend(false);
         SceneManager.LoadScene("Battle");
@@ -63,8 +62,7 @@ public class GameManager : MonoBehaviour
     {
         // isBattling = false;
         Debug.Log("load");
-        player.IsBattling = false;
-        eventSender.EnableInputEventSend(true);
+        // eventSender.EnableInputEventSend(true);
     }
 
     //Getters and Setters

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Classes and Components
-    [SerializeField] private PlayerInputHandler inputManager;
+    private PlayerInputHandler inputManager;
     private Rigidbody rb;
 
     //Other Variables

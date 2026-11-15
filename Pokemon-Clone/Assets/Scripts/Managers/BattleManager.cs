@@ -12,8 +12,15 @@ public class BattleManager : MonoBehaviour
         player = FindObjectOfType<PlayerBase>();
         enemy = FindObjectOfType<EnemyBase>();
 
-        // battle positions
+        // set battle positions
         player.transform.position = new Vector3(-3, 0, -3);
         enemy.transform.position = new Vector3(6, 0, 2);
+
+        // start battle (transition state)
+        player.IsBattling = true;
+        enemy.IsBattling = true;
+
+        // player always goes first (for now)
+        player.IsTurn = true;
     }
 }
