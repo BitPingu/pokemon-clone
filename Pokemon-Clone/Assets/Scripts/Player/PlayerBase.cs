@@ -71,43 +71,42 @@ public class PlayerBase : CharacterBase
 
         // anything here is called during the battle state through update()
 
-        if (IsTurn)
+        if (!IsTurn) return;
+
+        if (!_prompt)
         {
-            if (!_prompt)
+            // battle prompt
+            Debug.Log("It is the " + name + "'s turn");
+            Debug.Log("What will you do?");
+            Debug.Log("F: Fight | R: Run");
+            _prompt = true;
+        }
+
+        if (inputManager.PressedFightThisFrame())
+        {
+            // Fight
+            BattleManager.Instance.Attack(this);
+            _prompt = false;
+        }
+
+        if (inputManager.PressedRunThisFrame())
+        {
+            // Run
+            if (UnityEngine.Random.Range(0, 2) == 0)
             {
-                // battle prompt
-                Debug.Log("It is the " + name + "'s turn");
-                Debug.Log("What will you do?");
-                Debug.Log("F: Fight | R: Run");
-                _prompt = true;
-            }
+                Debug.Log("Got away safely!");
 
-            if (inputManager.PressedFightThisFrame())
+                // End Battle
+                BattleManager.Instance.End();
+            }
+            else
             {
-                // Fight
-                BattleManager.Instance.Attack(this);
-                _prompt = false;
+                Debug.Log("Couldn't get away!");
+
+                // Pass turn
+                BattleManager.Instance.PassTurn(this);
             }
-
-            if (inputManager.PressedRunThisFrame())
-            {
-                // Run
-                if (UnityEngine.Random.Range(0, 2) == 0)
-                {
-                    Debug.Log("Got away safely!");
-
-                    // End Battle
-                    BattleManager.Instance.End();
-                }
-                else
-                {
-                    Debug.Log("Couldn't get away!");
-
-                    // Pass turn
-                    BattleManager.Instance.PassTurn(this);
-                }
-                _prompt = false;
-            }
+            _prompt = false;
         }
     }
 }

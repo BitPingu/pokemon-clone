@@ -1,7 +1,15 @@
 using UnityEngine;
 
+public enum CharacterType
+{
+    Player,
+    Enemy
+}
+
 public class CharacterBase : MonoBehaviour
 {
+    public CharacterType Type;
+
     // states
     public StateMachine StateMachine { get; set; }
     public StateBase IdleState { get; set; }

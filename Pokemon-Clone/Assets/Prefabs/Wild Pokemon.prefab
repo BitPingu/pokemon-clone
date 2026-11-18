@@ -48,11 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14ac30a226fa49cd8b2d63f7b10261b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 1
   Level: 1
   MaxHealth: 20
   Strength: 4
-  Defence: 2
-  RewardExp: 0
 --- !u!135 &2660173178112735159
 SphereCollider:
   m_ObjectHideFlags: 0

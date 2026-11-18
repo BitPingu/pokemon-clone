@@ -33,12 +33,11 @@ public class EnemyBase : CharacterBase
 
         // anything here is called during the battle state through update()
 
-        if (IsTurn)
-        {
-            Debug.Log("It is the " + name + "'s turn");
+        if (!IsTurn) return;
 
-            // Fight
-            BattleManager.Instance.Attack(this);
-        }
+        Debug.Log("It is the " + name + "'s turn");
+
+        // Fight
+        BattleManager.Instance.Attack(this);
     }
 }

@@ -63,13 +63,13 @@ public class BattleManager : MonoBehaviour
         Debug.Log("Player: " + player.CurrentHealth + "/" + player.MaxHealth
             + " | Enemy: " + enemy.CurrentHealth + "/" + enemy.MaxHealth);
 
-        if (passer.GetComponent<PlayerBase>())
+        if (passer.Type == CharacterType.Player)
         {
             // now enemy's turn
             player.IsTurn = false;
             enemy.IsTurn = true;
         }
-        else if (passer.GetComponent<EnemyBase>())
+        else if (passer.Type == CharacterType.Enemy)
         {
             // now player's turn
             enemy.IsTurn = false;
@@ -81,11 +81,11 @@ public class BattleManager : MonoBehaviour
     {
         CharacterBase receiver = null;
 
-        if (attacker.GetComponent<PlayerBase>())
+        if (attacker.Type == CharacterType.Player)
         {
             receiver = enemy;
         }
-        else if (attacker.GetComponent<EnemyBase>())
+        else if (attacker.Type == CharacterType.Enemy)
         {
             receiver = player;
         }
@@ -106,12 +106,12 @@ public class BattleManager : MonoBehaviour
         {
             Debug.Log(attacker.name + " defeated " + receiver.name + "!");
             
-            if (attacker.GetComponent<PlayerBase>())
+            if (attacker.Type == CharacterType.Player)
             {
                 // End Battle
                 End();
             }
-            else if (attacker.GetComponent<EnemyBase>())
+            else if (attacker.Type == CharacterType.Enemy)
             {
                 // Game over
                 Debug.Log("game over");
