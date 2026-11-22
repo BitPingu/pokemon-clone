@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        inputManager = FindObjectOfType<PlayerInputHandler>();
-
+        // inputManager = FindObjectOfType<PlayerInputHandler>();
+        inputManager = GetComponentInChildren<PlayerInputHandler>();
     }
 
     private void Update()

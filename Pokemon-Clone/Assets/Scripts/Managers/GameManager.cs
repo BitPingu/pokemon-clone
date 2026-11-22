@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SO_EventSender eventSender;
     
     //Variables to keep track of
-    [SerializeField] private bool isBattling;
+    // [SerializeField] private bool isBattling;
+    [SerializeField] private PlayerBase player;
+    private Vector3 playerSavedPos;
 
     //Properties
     public SO_EventSender EventSender { get => eventSender; }
@@ -50,24 +52,29 @@ public class GameManager : MonoBehaviour
 
     private void EnterBattle()
     {
-        isBattling = true;
+        // isBattling = true;
         Debug.Log("GameManager - Loading Battle Scene");
-        eventSender.EnableInputEventSend(false);
+        // eventSender.EnableInputEventSend(false);
         SceneManager.LoadScene("Battle");
     }
 
 
     private void ExitBattle()
     {
-        isBattling = false;
-        eventSender.EnableInputEventSend(true);
+        // isBattling = false;
+        Debug.Log("GameManager - Exiting Battle Scene");
+        // eventSender.EnableInputEventSend(true);
+        SceneManager.LoadScene("Overworld");
+
+        // restore saved position
+        player.transform.position = player.GetComponent<PlayerCollision>().PlayerSavedPos;
     }
 
     //Getters and Setters
-    public bool GetIsBattling()
-    {
-        return isBattling;
-    }
+    // public bool GetIsBattling()
+    // {
+    //     return isBattling;
+    // }
 
 
 }

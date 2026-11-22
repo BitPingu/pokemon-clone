@@ -14,11 +14,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.Instance.EventSender.enableInput.AddListener(SetEnableInput);
+        // GameManager.Instance.EventSender.enableInput.AddListener(SetEnableInput);
     }
     private void OnDisable()
     {
-        GameManager.Instance.EventSender.enableInput.RemoveListener(SetEnableInput);
+        // GameManager.Instance.EventSender.enableInput.RemoveListener(SetEnableInput);
     }
 
 
@@ -39,6 +39,40 @@ public class PlayerInputHandler : MonoBehaviour
         if (!isInputEnabled) return;
 
         movement = context.ReadValue<Vector2>();
+    }
+
+    // Fight Variables and Actions
+    private bool fight;
+    public bool FightCommand { get => fight; }
+    public void FightAction(InputAction.CallbackContext context)
+    {
+        if (context.started) return;
+        if (!isInputEnabled) return;
+
+        fight = context.ReadValue<bool>();
+    }
+
+    public bool PressedFightThisFrame()
+    {
+        if (!isInputEnabled) return false;
+        return action.FindAction("Fight").WasPressedThisFrame();
+    }
+
+    // Run Variables and Actions
+    private bool run;
+    public bool RunCommand { get => run; }
+    public void RunAction(InputAction.CallbackContext context)
+    {
+        if (context.started) return;
+        if (!isInputEnabled) return;
+
+        run = context.ReadValue<bool>();
+    }
+
+    public bool PressedRunThisFrame()
+    {
+        if (!isInputEnabled) return false;
+        return action.FindAction("Run").WasPressedThisFrame();
     }
 
 
