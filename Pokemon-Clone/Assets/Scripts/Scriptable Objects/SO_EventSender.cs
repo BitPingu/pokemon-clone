@@ -12,6 +12,7 @@ using UnityEngine.Events;
 public class SO_EventSender : ScriptableObject
 {
     #region Battle Events
+    [System.NonSerialized]
     public UnityEvent enterBattle = new UnityEvent();
 
     public void EnterBattleEventSend()
@@ -20,6 +21,7 @@ public class SO_EventSender : ScriptableObject
         enterBattle.Invoke();
     }
 
+    [System.NonSerialized]
     public UnityEvent exitBattle = new UnityEvent();
     public void ExitBattleEventSend()
     {
@@ -32,6 +34,8 @@ public class SO_EventSender : ScriptableObject
     #region Movement Events
     //Called from any script that wants to enable/disable movement
     //received by the PlayerInputHandler 
+
+    [System.NonSerialized]
     public EnableInputEvent enableInput = new EnableInputEvent();
     public void EnableInputEventSend(bool isEnabled)
     {
@@ -43,5 +47,6 @@ public class SO_EventSender : ScriptableObject
     #endregion
 
 }
+
 
 public class EnableInputEvent : UnityEvent<bool> { }

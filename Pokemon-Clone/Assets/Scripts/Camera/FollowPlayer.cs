@@ -10,7 +10,6 @@ public class FollowPlayer : MonoBehaviour
     
     [Header("Movement Variables")]
     [SerializeField] private float catchupSpeed = 2f;
-    [SerializeField] private float distanceMoveThreshold = 0.2f;
     [SerializeField] private float lookAheadCatchupSpeed = 3f;
     [SerializeField] private float lookAheadXPos = 1f;
     [SerializeField] private float lookAheadZPos = 1f;
