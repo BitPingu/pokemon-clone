@@ -3,7 +3,7 @@ using UnityEngine;
 public class BattleState : StateBase
 {
     // pass in any parameters you need in the constructors
-    public BattleState(CharacterBase character, StateMachine stateMachine) : base(character, stateMachine)
+    public BattleState(CreatureBase creature, StateMachine stateMachine) : base(creature, stateMachine)
     {
 
     }
@@ -13,9 +13,9 @@ public class BattleState : StateBase
     {
         base.EnterState();
 
-        character.StartBattle();
+        creature.StartBattle();
 
-        // Debug.Log(character.name + " is battling.");
+        // Debug.Log(creature.name + " is battling.");
     }
 
     // code that runs when we exit the state
@@ -29,16 +29,16 @@ public class BattleState : StateBase
         base.FrameUpdate();
 
         // battle
-        if (character.IsBattling)
-            character.Battle();
+        if (creature.IsBattling)
+            creature.Battle();
 
         // exit battle
-        if (!character.IsBattling)
-            character.StateMachine.ChangeState(character.IdleState);
+        if (!creature.IsBattling)
+            creature.StateMachine.ChangeState(creature.IdleState);
 
         // death
-        if (character.CurrentHealth <= 0)
-            character.StateMachine.End();
+        if (creature.Creature.CurrentHealth <= 0)
+            creature.StateMachine.End();
     }
 }
 

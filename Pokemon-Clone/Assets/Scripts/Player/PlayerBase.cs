@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBase : CharacterBase
+public class PlayerBase : MonoBehaviour
 {
     // Singleton instance
     public static PlayerBase Instance { get; private set; }
 
-    // battle vars
-    private bool _prompt;
+    // Pokemon party
+    [SerializeField] private List<CreatureInstance> _party = new List<CreatureInstance>();
 
-    private PlayerInputHandler inputManager;
+    // Pokemon base to instantiate from
+    [SerializeField] private GameObject _creatureBase;
+
+    // Current Pokemon (walking!!)
+    private GameObject _currentCreature;
 
     protected virtual void Awake()
     {
@@ -26,87 +30,39 @@ public class PlayerBase : CharacterBase
         }
     }
 
-    protected override void Start()
+    // Adds a creature to the player's party
+    public void AddCreature(SO_CreatureData creatureData)
     {
-        base.Start();
+        if (_party.Count >= 6) return; // party full! (send to pc?)
 
-        inputManager = GetComponentInChildren<PlayerInputHandler>();
+        CreatureInstance creature = new CreatureInstance(creatureData);
+        _party.Add(creature);
     }
 
-    public override void StartIdle()
+    // Spawns a creature in the current scene
+    public void SpawnCreature(CreatureInstance creature)
     {
-        base.StartIdle();
+        // only 1 active creature at a time
+        if (_currentCreature != null) Destroy(_currentCreature);
 
-        // anything here is called when entering the idle state
+        // instantiate at position
+        _currentCreature = Instantiate(_creatureBase);
 
-        // player can move in idle state
-        GetComponent<PlayerMovement>().enabled = true;
+        // assign current data
+        _currentCreature.GetComponent<CreatureBase>().Creature = creature;
     }
 
-    public override void Idle()
+    // Gets the first healthy creature in the party
+    public CreatureInstance GetFirstHealthyCreature()
     {
-        base.Idle();
-
-        // anything here is called during the idle state through update()
-        
-        // move player movement code here?
-    }
-
-    public override void StartBattle()
-    {
-        base.StartBattle();
-
-        // anything here is called when entering the battle state
-
-        // player cannot move in battle state
-        GetComponent<PlayerMovement>().enabled = false;
-
-        // stop movement
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-    }
-
-    public override void Battle()
-    {
-        base.Battle();
-
-        // anything here is called during the battle state through update()
-
-        if (!IsTurn) return;
-
-        if (!_prompt)
+        foreach (CreatureInstance creature in _party)
         {
-            // battle prompt
-            Debug.Log("It is the " + name + "'s turn");
-            Debug.Log("What will you do?");
-            Debug.Log("F: Fight | R: Run");
-            _prompt = true;
-        }
-
-        if (inputManager.PressedFightThisFrame())
-        {
-            // Fight
-            BattleManager.Instance.Attack(this);
-            _prompt = false;
-        }
-
-        if (inputManager.PressedRunThisFrame())
-        {
-            // Run
-            if (UnityEngine.Random.Range(0, 2) == 0)
+            if (creature.CurrentHealth > 0)
             {
-                Debug.Log("Got away safely!");
-
-                // End Battle
-                BattleManager.Instance.End();
+                return creature;
             }
-            else
-            {
-                Debug.Log("Couldn't get away!");
-
-                // Pass turn
-                BattleManager.Instance.PassTurn(this);
-            }
-            _prompt = false;
         }
+
+        return null; // all creatures have fainted
     }
 }

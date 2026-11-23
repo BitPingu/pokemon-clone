@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventSender: {fileID: 11400000, guid: da0657706accc21409d99e3e0581ee7e, type: 2}
-  isInBattle: 0
+  player: {fileID: 0}
+  starter: {fileID: 11400000, guid: 99d560236b8554691bded5ce0cd5b7c3, type: 2}

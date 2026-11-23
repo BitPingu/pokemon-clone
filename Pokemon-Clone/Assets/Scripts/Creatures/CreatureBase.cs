@@ -1,14 +1,9 @@
 using UnityEngine;
 
-public enum CharacterType
+public class CreatureBase : MonoBehaviour
 {
-    Player,
-    Enemy
-}
-
-public class CharacterBase : MonoBehaviour
-{
-    public CharacterType Type;
+    // Pokemon data
+    public CreatureInstance Creature { get; set; }
 
     // states
     public StateMachine StateMachine { get; set; }
@@ -19,17 +14,8 @@ public class CharacterBase : MonoBehaviour
     public bool IsBattling { get; set; }
     public bool IsTurn { get; set; }
 
-    // battle stats
-    public int Level = 1;
-    public int MaxHealth = 20;
-    public int CurrentHealth { get; set; }
-    public int Strength = 4;
-
     protected virtual void Start()
     {
-        // set parameters
-        CurrentHealth = MaxHealth;
-
         // state machine
         StateMachine = new StateMachine();
 
@@ -58,22 +44,19 @@ public class CharacterBase : MonoBehaviour
 
     public virtual void StartBattle() { }
 
-    public virtual void Battle() { }
-
-    public virtual void Damage(int damageAmount)
+    public virtual void Battle()
     {
-        // prevent negative
-        int damageTaken = Mathf.Min(damageAmount, CurrentHealth);
+        if (!IsTurn) return;
 
-        Debug.Log(name + " took " + damageTaken + " damage");
-
-        // take damage
-        CurrentHealth -= damageTaken;
-
-        if (CurrentHealth <= 0)
+        if (gameObject.CompareTag("CaughtPokemon"))
         {
-            Debug.Log(name + " fainted!");
-            // state automatically ends
+            // player creature's turn
+            BattleManager.Instance.PlayerTurn(this);
+        }
+        else
+        {
+            // enemy creature turn
+            BattleManager.Instance.Attack(this);
         }
     }
 }

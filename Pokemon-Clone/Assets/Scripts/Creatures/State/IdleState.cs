@@ -3,7 +3,7 @@ using UnityEngine;
 public class IdleState : StateBase
 {
     // pass in any parameters you need in the constructors
-    public IdleState(CharacterBase character, StateMachine stateMachine) : base(character, stateMachine)
+    public IdleState(CreatureBase creature, StateMachine stateMachine) : base(creature, stateMachine)
     {
         
     }
@@ -13,9 +13,9 @@ public class IdleState : StateBase
     {
         base.EnterState();
 
-        character.StartIdle();
+        creature.StartIdle();
 
-        // Debug.Log(character.name + " is idle.");
+        // Debug.Log(creature.name + " is idle.");
     }
 
     // code that runs when we exit the state
@@ -29,11 +29,11 @@ public class IdleState : StateBase
         base.FrameUpdate();
 
         // idle
-        character.Idle();
+        creature.Idle();
 
         // battle opponent
-        if (character.IsBattling)
-            character.StateMachine.ChangeState(character.BattleState);
+        if (creature.IsBattling)
+            creature.StateMachine.ChangeState(creature.BattleState);
     }
 }
 

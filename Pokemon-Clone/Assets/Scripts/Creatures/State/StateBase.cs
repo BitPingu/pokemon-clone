@@ -1,13 +1,13 @@
 
 public class StateBase
 {
-    protected CharacterBase character;
+    protected CreatureBase creature;
     protected StateMachine stateMachine;
 
 
-    public StateBase(CharacterBase character, StateMachine stateMachine)
+    public StateBase(CreatureBase creature, StateMachine stateMachine)
     {
-        this.character = character;
+        this.creature = creature;
         this.stateMachine = stateMachine;
     }
 

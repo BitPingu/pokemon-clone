@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7773200699115206139}
   - component: {fileID: 7162137745196178852}
+  - component: {fileID: 3740077985473488953}
   - component: {fileID: 2660173178112735159}
   - component: {fileID: 241351131563124947}
   - component: {fileID: 5508639852931746188}
@@ -45,13 +46,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676921249279021057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e14ac30a226fa49cd8b2d63f7b10261b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e6e798fe3bdb4639bf0c53197603989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
-  Level: 1
-  MaxHealth: 20
-  Strength: 4
+--- !u!114 &3740077985473488953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676921249279021057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefa90d499ba647e9aed43cc9d1cd759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creature: {fileID: 11400000, guid: 72a9769df48db4f1caee7c13a1593b4a, type: 2}
 --- !u!135 &2660173178112735159
 SphereCollider:
   m_ObjectHideFlags: 0

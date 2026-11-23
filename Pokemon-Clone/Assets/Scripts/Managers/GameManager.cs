@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     //Variables to keep track of
     // [SerializeField] private bool isBattling;
     [SerializeField] private PlayerBase player;
-    private Vector3 playerSavedPos;
+
+    [SerializeField] private SO_CreatureData starter;
 
     //Properties
     public SO_EventSender EventSender { get => eventSender; }
@@ -56,6 +57,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    private void Start()
+    {
+        // Starter pokemon
+        player.AddCreature(starter);
+    }
 
 
     private void EnterBattle()
