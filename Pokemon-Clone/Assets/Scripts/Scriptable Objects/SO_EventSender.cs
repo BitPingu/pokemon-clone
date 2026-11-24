@@ -54,6 +54,7 @@ public class SO_EventSender : ScriptableObject
     #endregion
 
     #region Item Events
+    //Called from the PlayerItemInput.cs when the player presses ACCEPT to pick up an item in the overworld
     [System.NonSerialized]
     public OnItemPickedUpEvent onItemPickedUpEvent = new OnItemPickedUpEvent();
 
@@ -61,6 +62,23 @@ public class SO_EventSender : ScriptableObject
     {
         onItemPickedUpEvent.Invoke(_name, _description, _type, _sprite);
     }
+
+    [System.NonSerialized]
+    public OnAddItemToInventoryEvent onAddItemToInventoryEvent = new OnAddItemToInventoryEvent();
+
+    public void OnAddItemToInventoryEventSend(SO_Item_Base _item)
+    {
+        onAddItemToInventoryEvent.Invoke(_item);
+    }
+
+    [System.NonSerialized]
+    public OnRemoveItemFromInventoryEvent onRemoveItemFromInventoryEvent = new OnRemoveItemFromInventoryEvent();
+
+    public void OnRemoveItemFromInventoryEventSend(SO_Item_Base _item)
+    {
+        onRemoveItemFromInventoryEvent.Invoke(_item);
+    }
+
     #endregion
 }
 
@@ -68,3 +86,5 @@ public class SO_EventSender : ScriptableObject
 public class EnableInputEvent : UnityEvent<bool> { }
 
 public class OnItemPickedUpEvent : UnityEvent<string, string, EItemType, Sprite> { }
+public class OnAddItemToInventoryEvent : UnityEvent<SO_Item_Base> { }
+public class OnRemoveItemFromInventoryEvent : UnityEvent<SO_Item_Base> { }

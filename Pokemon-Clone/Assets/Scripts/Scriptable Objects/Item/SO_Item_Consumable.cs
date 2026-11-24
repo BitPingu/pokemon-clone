@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Consumable Item", menuName = "Scriptable Objects/Items/Consumable")]
+[CreateAssetMenu(fileName = "Item_Consumable", menuName = "Scriptable Objects/Items/Consumable")]
 public class SO_Item_Consumable : SO_Item_Base
 {
     [Header("Consumable Properties")]
@@ -31,17 +31,22 @@ public class SO_Item_Consumable : SO_Item_Base
                 break;
 
             case EItemConsumableEffect.Heal_HP:
+                _creatureData.UpdateCurrentHealth(healHPAmount);
                 break;
 
             case EItemConsumableEffect.Heal_Burn:
+                _creatureData.RemoveStatusCondition(EStatusCondition.Burn);
                 break;
 
             case EItemConsumableEffect.Heal_Poison:
+                _creatureData.RemoveStatusCondition(EStatusCondition.Poison);
                 break;
 
             default:
                 break;
         }
+
+        GameManager.Instance.EventSender.OnRemoveItemFromInventoryEventSend(this);
     }
 }   
 

@@ -90,12 +90,16 @@ public class PlayerInputHandler : MonoBehaviour
    
     public void ConfirmAction(InputAction.CallbackContext context)
     {
-        if (context.started) return;
         if (!isInputEnabled) return;
 
-        confirm = context.ReadValue<float>();
+        if (context.started)
+        {
+            GameManager.Instance.EventSender.OnAcceptPressedEventSend();
+            return;
+        }
 
-        if (context.performed) GameManager.Instance.EventSender.OnAcceptPressedEventSend();
+        confirm = context.ReadValue<float>();
+      
     }
 
     public bool PressedConfirmThisFrame()

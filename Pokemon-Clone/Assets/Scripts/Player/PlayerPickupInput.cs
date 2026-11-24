@@ -12,12 +12,6 @@ public class PlayerPickupInput : MonoBehaviour
         GameManager.Instance.EventSender.onAcceptPressedEvent.AddListener(PressedAccept);    
     }
 
-    private void OnEnable()
-    {
-        if (GameManager.Instance != null)
-            GameManager.Instance.EventSender.onAcceptPressedEvent.AddListener(PressedAccept);
-    }
-
     private void OnDisable()
     {
         if(GameManager.Instance != null)

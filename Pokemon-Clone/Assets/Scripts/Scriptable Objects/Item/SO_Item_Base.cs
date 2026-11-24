@@ -17,6 +17,7 @@ public class SO_Item_Base : ScriptableObject
     {
         //Send an event for the UI to show that we picked up an item
         GameManager.Instance.EventSender.OnItemPickedUpEventSend(itemName, itemDescription, itemType, itemSprite);
+        GameManager.Instance.EventSender.OnAddItemToInventoryEventSend(this);
     }
 
     //Pass a creature through this method to use on specific creature. 
