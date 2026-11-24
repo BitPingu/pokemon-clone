@@ -8,7 +8,7 @@ public class PlayerBase : MonoBehaviour
     public static PlayerBase Instance { get; private set; }
 
     // Pokemon party
-    [SerializeField] private List<CreatureInstance> _party = new List<CreatureInstance>();
+    private List<CreatureInstance> _party = new List<CreatureInstance>();
 
     // Pokemon base to instantiate from
     [SerializeField] private GameObject _creatureBase;
@@ -33,10 +33,19 @@ public class PlayerBase : MonoBehaviour
     // Adds a creature to the player's party
     public void AddCreature(SO_CreatureData creatureData)
     {
-        if (_party.Count >= 6) return; // party full! (send to pc?)
+        if (_party.Count >= 6) {
+            Debug.Log("Party is full!");
+            return; // party full! (send to pc?)
+        }
 
         CreatureInstance creature = new CreatureInstance(creatureData);
         _party.Add(creature);
+
+        Debug.Log("Creatures in party:");
+        foreach (CreatureInstance caughtCreature in _party)
+        {
+            Debug.Log(caughtCreature.Name);
+        }
     }
 
     // Spawns a creature in the current scene

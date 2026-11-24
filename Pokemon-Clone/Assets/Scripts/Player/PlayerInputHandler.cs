@@ -66,6 +66,23 @@ public class PlayerInputHandler : MonoBehaviour
         return action.FindAction("Fight").WasPressedThisFrame();
     }
 
+    // Catch Variables and Actions
+    private bool catchAction;
+    public bool CatchCommand { get => catchAction; }
+    public void CatchAction(InputAction.CallbackContext context)
+    {
+        if (context.started) return;
+        if (!isInputEnabled) return;
+
+        catchAction = context.ReadValue<bool>();
+    }
+
+    public bool PressedCatchThisFrame()
+    {
+        if (!isInputEnabled) return false;
+        return action.FindAction("Catch").WasPressedThisFrame();
+    }
+
     // Run Variables and Actions
     private bool run;
     public bool RunCommand { get => run; }

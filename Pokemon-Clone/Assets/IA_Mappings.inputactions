@@ -43,6 +43,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Catch",
+                    "type": "Button",
+                    "id": "82043869-481d-4e62-bb1c-35ff95a08c98",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Run",
                     "type": "Button",
                     "id": "c636a597-9fd5-4840-be49-541e2b9f52ea",
@@ -281,6 +290,17 @@
                     "processors": "",
                     "groups": ";Keyboard",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "910c4f34-777c-4fc9-b9eb-89cf3ee2080c",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "Catch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

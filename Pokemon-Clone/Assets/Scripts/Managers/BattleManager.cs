@@ -101,7 +101,7 @@ public class BattleManager : MonoBehaviour
         if (!_prompt)
         {
             Debug.Log("What will " + attacker.Creature.Name + " do?");
-            Debug.Log("F: Fight | R: Run");
+            Debug.Log("F: Fight | C: Catch | R: Run");
             _prompt = true;
         }
 
@@ -109,6 +109,27 @@ public class BattleManager : MonoBehaviour
         {
             // Fight
             Attack(attacker);
+            _prompt = false;
+        }
+
+        if (inputManager.PressedCatchThisFrame())
+        {
+            Debug.Log("Player used a Pokeball!");
+            Debug.Log("*wobble*");
+            Debug.Log("*wobble*");
+            // Catch
+            if (Random.Range(0, 2) == 0)
+            {
+                // Success
+                Caught();
+            }
+            else
+            {
+                Debug.Log("Aww! It appeared to be caught!");
+
+                // Pass turn
+                PassTurn(attacker);
+            }
             _prompt = false;
         }
 
@@ -182,5 +203,17 @@ public class BattleManager : MonoBehaviour
                 #endif
             }
         }
+    }
+
+    // catch the opponent
+    public void Caught()
+    {
+        Debug.Log("Gotcha! " + enemy.Creature.Name + " was caught!");
+
+        // Add to party
+        p.AddCreature(enemy.Creature.CreatureData);
+
+        // End Battle
+        End();
     }
 }

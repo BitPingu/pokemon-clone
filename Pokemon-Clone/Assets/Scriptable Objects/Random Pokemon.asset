@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
   m_Name: Random Pokemon
   m_EditorClassIdentifier: 
-  creatureName: Creature
+  creatureName: Bidoof
   creatureDescrition: Creature Description
   elementalType: 
   frontSprite: {fileID: 0}
   backSprite: {fileID: 0}
-  baseHealth: 50
-  baseStrength: 50
-  baseSpeed: 50
-  baseDefense: 50
+  baseHealth: 20
+  baseStrength: 4
+  baseSpeed: 0
+  baseDefense: 0
   maxHealthMultiplier: 1
   maxStrengthMultiplier: 1
   maxSpeedMultiplier: 1

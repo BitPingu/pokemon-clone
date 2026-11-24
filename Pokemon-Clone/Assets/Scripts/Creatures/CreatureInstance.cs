@@ -6,16 +6,16 @@ using UnityEngine;
 public class CreatureInstance
 {
     // creature data
-    public SO_CreatureData Creature { get; set;}
-    public string Name => Creature.creatureName;
+    public SO_CreatureData CreatureData { get; set;}
+    public string Name => CreatureData.creatureName;
 
     // base stats (from SO)
     // dynamically updates on every call using (=>)
     // we could apply any multipliers here
-    public int MaxHealth => Creature.baseHealth;
-    public int Strength => Creature.baseStrength;
-    public int Speed => Creature.baseSpeed;
-    public int Defense => Creature.baseDefense;
+    public int MaxHealth => CreatureData.baseHealth;
+    public int Strength => CreatureData.baseStrength;
+    public int Speed => CreatureData.baseSpeed;
+    public int Defense => CreatureData.baseDefense;
 
     // individual stats (for instance)
     public int CurrentLevel { get; set; }
@@ -23,7 +23,7 @@ public class CreatureInstance
 
     public CreatureInstance(SO_CreatureData creatureData)
     {
-        this.Creature = creatureData;
+        this.CreatureData = creatureData;
         
         // set starting health
         this.CurrentHealth = MaxHealth;

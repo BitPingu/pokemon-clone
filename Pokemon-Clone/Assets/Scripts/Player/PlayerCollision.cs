@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This script is on the Player Prefab.
@@ -14,7 +15,8 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("WildPokemon"))
+        // Encounter Pokemon in the overworld
+        if (other.CompareTag("WildPokemon") && SceneManager.GetActiveScene().name == "Overworld")
         {
             // Get the normalized direction from the enemy back to player
             Vector3 directionToSelf = (transform.position - other.transform.position).normalized;
