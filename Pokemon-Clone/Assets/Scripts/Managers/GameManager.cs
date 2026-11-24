@@ -62,6 +62,13 @@ public class GameManager : MonoBehaviour
     {
         // Starter pokemon
         player.AddCreature(starter);
+
+        // spawn partner creature
+        CreatureInstance creature = player.GetFirstHealthyCreature();
+        player.SpawnCreature(creature, player.transform.position);
+
+        // follow player
+        GameObject.FindWithTag("CaughtPokemon").GetComponent<CreatureBase>().IsFollowing = true;
     }
 
 
@@ -83,6 +90,7 @@ public class GameManager : MonoBehaviour
 
         // restore saved position
         player.transform.position = player.GetComponent<PlayerCollision>().PlayerSavedPos;
+        GameObject.FindWithTag("CaughtPokemon").transform.position = player.transform.position;
     }
 
 

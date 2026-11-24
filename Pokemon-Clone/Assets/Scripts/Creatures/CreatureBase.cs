@@ -11,6 +11,7 @@ public class CreatureBase : MonoBehaviour
     public StateBase BattleState { get; set; }
 
     // conditions
+    public bool IsFollowing { get; set; }
     public bool IsBattling { get; set; }
     public bool IsTurn { get; set; }
 
@@ -40,7 +41,23 @@ public class CreatureBase : MonoBehaviour
 
     public virtual void StartIdle() { }
 
-    public virtual void Idle() { }
+    public virtual void Idle()
+    {
+        if (IsFollowing)
+        {
+            Vector3 playerPos = GameObject.FindWithTag("Player").transform.position;
+            float distance = Vector3.Distance(transform.position, playerPos);
+
+            if (distance > 1.5f)
+            {
+                transform.position = Vector3.MoveTowards(
+                    transform.position,
+                    playerPos,
+                    5f*Time.deltaTime
+                );
+            }
+        }
+    }
 
     public virtual void StartBattle() { }
 

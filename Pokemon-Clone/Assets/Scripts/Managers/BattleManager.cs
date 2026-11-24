@@ -34,15 +34,12 @@ public class BattleManager : MonoBehaviour
         // player input
         inputManager = p.GetComponentInChildren<PlayerInputHandler>();
 
-        // spawn the player creature
-        CreatureInstance creature = p.GetFirstHealthyCreature();
-        p.SpawnCreature(creature);
-
         // get the player and enemy creatures
         player = GameObject.FindWithTag("CaughtPokemon").GetComponent<CreatureBase>();
         enemy = GameObject.FindWithTag("WildPokemon").GetComponent<CreatureBase>();
 
         // set battle positions
+        p.transform.position = new Vector3(-5f, 0, -5f);
         player.transform.position = new Vector3(-3, 0, -3);
         enemy.transform.position = new Vector3(6, 0, 2);
 
@@ -51,7 +48,7 @@ public class BattleManager : MonoBehaviour
         enemy.GetComponent<CreatureBase>().IsBattling = true;
 
         Debug.Log("A wild " + enemy.Creature.Name + " appeared!");
-        Debug.Log("Go " + creature.Name + "!");
+        Debug.Log("Go " + player.Creature.Name + "!");
 
         Debug.Log(player.Creature.Name + ": " + player.Creature.CurrentHealth + "/" + player.Creature.MaxHealth
             + " | " + enemy.Creature.Name + ": " + enemy.Creature.CurrentHealth + "/" + enemy.Creature.MaxHealth);

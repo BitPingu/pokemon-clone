@@ -24,7 +24,8 @@ public class PlayerCollision : MonoBehaviour
             // Save player position away from enemy for reload
             PlayerSavedPos = other.transform.position + (directionToSelf * 3f);
 
-            // Save enemy
+            // Save partner and enemy
+            DontDestroyOnLoad(GameObject.FindWithTag("CaughtPokemon"));
             DontDestroyOnLoad(other);
 
             //Start Battle

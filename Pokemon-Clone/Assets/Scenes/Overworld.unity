@@ -460,6 +460,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wild Pokemon (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3740077985473488953, guid: d2cb9e71cdb559940b51015722778685,
+        type: 3}
+      propertyPath: creature
+      value: 
+      objectReference: {fileID: 11400000, guid: 495f5111952264ebbbdd4cafd035ef31,
+        type: 2}
     - target: {fileID: 7773200699115206139, guid: d2cb9e71cdb559940b51015722778685,
         type: 3}
       propertyPath: m_LocalPosition.x

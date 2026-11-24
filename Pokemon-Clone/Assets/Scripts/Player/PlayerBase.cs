@@ -49,13 +49,13 @@ public class PlayerBase : MonoBehaviour
     }
 
     // Spawns a creature in the current scene
-    public void SpawnCreature(CreatureInstance creature)
+    public void SpawnCreature(CreatureInstance creature, Vector3 position)
     {
         // only 1 active creature at a time
         if (_currentCreature != null) Destroy(_currentCreature);
 
         // instantiate at position
-        _currentCreature = Instantiate(_creatureBase);
+        _currentCreature = Instantiate(_creatureBase, position, Quaternion.identity);
 
         // assign current data
         _currentCreature.GetComponent<CreatureBase>().Creature = creature;
