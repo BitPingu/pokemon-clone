@@ -21,15 +21,20 @@ public class FollowPlayer : MonoBehaviour
    
     private void Start()
     {
+        inputhandler = FindObjectOfType<PlayerInputHandler>();
+
+        if (targetTransform == null) return;
+
         SetLookTarget(targetTransform);
 
         initialOffset = targetTransform.position - transform.position;
 
-        inputhandler = FindObjectOfType<PlayerInputHandler>();
     }
 
     private void Update()
     {
+        if (targetTransform == null) return;
+
         //Get movement input. If x < 0, move camera more left
         //move camera towards target position
         Vector3 newPos = Vector3.Slerp(transform.position, targetTransform.position - initialOffset, Time.deltaTime * catchupSpeed);
@@ -61,11 +66,17 @@ public class FollowPlayer : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(targetTransform.position, transform.position);
+        if (targetTransform != null) 
+        {
+            Gizmos.color = Color.yellow;
+
+            Gizmos.DrawLine(targetTransform.position, transform.position);
+        }
+            
 
         if(Application.isPlaying)
         {
+            if (targetTransform == null) return;
             Gizmos.color = Color.red;
             //Drawing Look Ahead X position
             Gizmos.DrawLine(transform.position, new Vector3(targetTransform.position.x - initialOffset.x - lookAheadXPos, targetTransform.position.y - initialOffset.y, targetTransform.position.z - initialOffset.z));

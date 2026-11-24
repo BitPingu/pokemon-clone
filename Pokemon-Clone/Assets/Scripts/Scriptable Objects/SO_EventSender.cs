@@ -31,7 +31,7 @@ public class SO_EventSender : ScriptableObject
     #endregion
 
 
-    #region Movement Events
+    #region InputEvents
     //Called from any script that wants to enable/disable movement
     //received by the PlayerInputHandler 
 
@@ -43,10 +43,28 @@ public class SO_EventSender : ScriptableObject
         enableInput.Invoke(isEnabled);
     }
 
-    
+    //Called from the PlayerInputHandler.cs
+    [System.NonSerialized]
+    public UnityEvent onAcceptPressedEvent = new UnityEvent();
+    public void OnAcceptPressedEventSend()
+    {
+        onAcceptPressedEvent.Invoke();
+    }
+
     #endregion
 
+    #region Item Events
+    [System.NonSerialized]
+    public OnItemPickedUpEvent onItemPickedUpEvent = new OnItemPickedUpEvent();
+
+    public void OnItemPickedUpEventSend(string _name, string _description, EItemType _type, Sprite _sprite)
+    {
+        onItemPickedUpEvent.Invoke(_name, _description, _type, _sprite);
+    }
+    #endregion
 }
 
 
 public class EnableInputEvent : UnityEvent<bool> { }
+
+public class OnItemPickedUpEvent : UnityEvent<string, string, EItemType, Sprite> { }

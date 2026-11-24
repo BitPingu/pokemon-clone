@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6763166441738273678}
   - component: {fileID: 6783645016167084230}
   - component: {fileID: 324008441707267763}
+  - component: {fileID: 8728214217468358593}
   m_Layer: 0
   m_Name: PlayerInputManager
   m_TagString: Untagged
@@ -107,6 +108,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a8bbf9a3-5fe5-4364-90ef-b570c29cc11e
     m_ActionName: Overworld/Cancel[/Keyboard/x,/Keyboard/q,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7c55a061-2363-4fbf-b028-b61b8c5ad957
+    m_ActionName: Overworld/Fight[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c636a597-9fd5-4840-be49-541e2b9f52ea
+    m_ActionName: Overworld/Run[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Overworld
@@ -122,5 +131,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d3a2439cc1b0674e8841ae17d1b5260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8728214217468358593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938119310943421163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ccefee42dac884480dc8fbe3e043a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

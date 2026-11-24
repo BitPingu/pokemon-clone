@@ -133,11 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a99456050ead4779bf0f7631a41496d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 0
   Level: 1
   MaxHealth: 20
   Strength: 4
-  Defence: 2
-  RewardExp: 0
 --- !u!114 &2962915513978978498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f986642a0d57541aad8235c25af984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
   movementSpeed: 6
 --- !u!114 &4144731698627225276
 MonoBehaviour:
@@ -188,7 +186,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &8518302468400280331

@@ -7,7 +7,7 @@ public class SO_CreatureData : ScriptableObject
 {
     [Header("General Creature Information")]
     public string creatureName = "Creature";
-    public string creatureDescrition = "Creature Description";
+    [TextArea] public string creatureDescrition = "Creature Description";
     public List<EElementalType> elementalType;
     //public Ability ability;
     public Sprite frontSprite;
@@ -35,29 +35,50 @@ public class SO_CreatureData : ScriptableObject
 
     [Header("Current Creature Properties")]
     //Information Specific to individual versions of the creature
-    public int currentLevel;
+    public int currentLevel = 1;
     public int currentHealth;
     public SO_Item_Equip currentItemEquipped;
-    public int currentStatusConditions;
+    public List<EStatusCondition> currentStatusConditions;
     //public List<Moves> currentMoves;
 
 
     //Get the statistics based on the current level
     public int GetMaxHealth()
     {
-        return baseHealth * (currentLevel / 3);
+        return baseHealth * Mathf.Max((currentLevel / 3), 1);
     }
     public int GetMaxStrength()
     {
-        return baseStrength * (currentLevel / 3);
+        return baseStrength * Mathf.Max((currentLevel / 3), 1);
     }
     public int GetMaxSpeed()
     {
-        return baseSpeed * (currentLevel / 3);
+        return baseSpeed * Mathf.Max((currentLevel / 3), 1);
     }
     public int GetMaxDefense()
     {
-        return baseDefense * (currentLevel / 3);
+        return baseDefense * Mathf.Max((currentLevel / 3), 1);
+    }
+
+    //Call this to add equipment onto Creature
+    public void OnEquip(SO_Item_Equip _itemToEquip)
+    {
+        currentItemEquipped = _itemToEquip;
+        currentItemEquipped.OnUse(this);
+    }
+
+    //Call this to remove equipment on Creature
+    public void OnRemoveEquipment()
+    {
+        currentItemEquipped.OnRemove(this);
+        currentItemEquipped = null;
+    }
+
+
+    public void Awake()
+    {
+        //Set the current health to the max of the level
+        currentHealth = GetMaxHealth();
     }
 
 }

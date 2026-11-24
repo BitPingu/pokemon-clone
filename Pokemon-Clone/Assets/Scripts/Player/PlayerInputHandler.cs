@@ -12,13 +12,21 @@ public class PlayerInputHandler : MonoBehaviour
     //Input Variables
     private bool isInputEnabled = true;
 
+    private void Start()
+    {
+        if(GameManager.Instance != null)
+            GameManager.Instance.EventSender.enableInput.AddListener(SetEnableInput);
+    }
     private void OnEnable()
     {
-        // GameManager.Instance.EventSender.enableInput.AddListener(SetEnableInput);
+        if (GameManager.Instance != null)
+            GameManager.Instance.EventSender.enableInput.AddListener(SetEnableInput);
     }
+
     private void OnDisable()
     {
-        // GameManager.Instance.EventSender.enableInput.RemoveListener(SetEnableInput);
+        if (GameManager.Instance != null)
+            GameManager.Instance.EventSender.enableInput.RemoveListener(SetEnableInput);
     }
 
 
@@ -77,16 +85,17 @@ public class PlayerInputHandler : MonoBehaviour
 
 
     //Confirm Variables and Actions
-    private bool confirm;
-    public bool Confirm { get => confirm; }
+    private float confirm;
+    public float Confirm { get => confirm; }
    
     public void ConfirmAction(InputAction.CallbackContext context)
     {
         if (context.started) return;
         if (!isInputEnabled) return;
 
-        confirm = context.ReadValue<bool>();
+        confirm = context.ReadValue<float>();
 
+        if (context.performed) GameManager.Instance.EventSender.OnAcceptPressedEventSend();
     }
 
     public bool PressedConfirmThisFrame()
@@ -97,14 +106,14 @@ public class PlayerInputHandler : MonoBehaviour
 
 
     //Cancel Variables and Actions
-    private bool cancel;
-    private bool Cancel { get => cancel; }
+    private float cancel;
+    private float Cancel { get => cancel; }
     public void CancelAction(InputAction.CallbackContext context)
     {
         if (context.started) return;
         if (!isInputEnabled) return;
 
-        cancel = context.ReadValue<bool>();
+        cancel = context.ReadValue<float>();
     }
 
     public bool PressedCancelThisFrame()
