@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 /// <summary>
@@ -29,7 +30,6 @@ public class SO_EventSender : ScriptableObject
         exitBattle.Invoke();
     }
     #endregion
-
 
     #region InputEvents
     //Called from any script that wants to enable/disable movement
@@ -80,6 +80,16 @@ public class SO_EventSender : ScriptableObject
     }
 
     #endregion
+
+    #region Scene Events
+    [System.NonSerialized]
+    public OnSceneLoadedEvent onSceneLoadedEvent = new OnSceneLoadedEvent();
+    public void OnSceneLoadedEventSend(Scene _sceneLoaded)
+    {
+        onSceneLoadedEvent.Invoke(_sceneLoaded);
+    }
+
+    #endregion
 }
 
 
@@ -88,3 +98,4 @@ public class EnableInputEvent : UnityEvent<bool> { }
 public class OnItemPickedUpEvent : UnityEvent<string, string, EItemType, Sprite> { }
 public class OnAddItemToInventoryEvent : UnityEvent<SO_Item_Base> { }
 public class OnRemoveItemFromInventoryEvent : UnityEvent<SO_Item_Base> { }
+public class OnSceneLoadedEvent : UnityEvent<Scene> { }

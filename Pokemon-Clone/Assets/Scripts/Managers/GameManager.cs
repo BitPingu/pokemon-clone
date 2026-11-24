@@ -23,16 +23,24 @@ public class GameManager : MonoBehaviour
     {
         eventSender.enterBattle.AddListener(EnterBattle);
         eventSender.exitBattle.AddListener(ExitBattle);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-  
 
     private void OnDisable()
     {
         eventSender.enterBattle.RemoveListener(EnterBattle);
         eventSender.exitBattle.RemoveListener(ExitBattle);
+
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    //Game Manager gets when a scene is loaded and broadcasts it to anyone that wants to listen to the event
+    private void OnSceneLoaded(Scene _sceneLoaded, LoadSceneMode _loadSceneMode)
+    {
+        EventSender.OnSceneLoadedEventSend(_sceneLoaded);
+    }
 
     private void Awake()
     {
@@ -69,6 +77,7 @@ public class GameManager : MonoBehaviour
         // restore saved position
         player.transform.position = player.GetComponent<PlayerCollision>().PlayerSavedPos;
     }
+
 
     //Getters and Setters
     // public bool GetIsBattling()

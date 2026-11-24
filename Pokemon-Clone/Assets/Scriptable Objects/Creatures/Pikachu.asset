@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
-  m_Name: Creature Data 3
+  m_Name: Pikachu
   m_EditorClassIdentifier: 
-  creatureName: Creature
-  creatureDescrition: Creature Description
+  parentCreature: {fileID: 0}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
   elementalType: 
   frontSprite: {fileID: 0}
   backSprite: {fileID: 0}
@@ -26,6 +27,6 @@ MonoBehaviour:
   maxSpeedMultiplier: 1
   maxDefenseMultiplier: 1
   currentLevel: 1
-  currentHealth: 0
+  currentHealth: 64
   currentItemEquipped: {fileID: 0}
   currentStatusConditions: 

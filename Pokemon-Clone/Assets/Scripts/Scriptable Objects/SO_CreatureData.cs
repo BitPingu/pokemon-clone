@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Creature Data", menuName = "Scriptable Objects/Creature Data")]
@@ -33,20 +34,21 @@ public class SO_CreatureData : ScriptableObject
     [Range(0f, 100f)]
     public int baseDefense = 50;
 
+    [Header("Current Creature Properties")]
     //If we want to add a multiplier to the creature stats. Manually buffing them
     public int maxHealthMultiplier = 1;
     public int maxStrengthMultiplier = 1;
     public int maxSpeedMultiplier = 1;
     public int maxDefenseMultiplier = 1;
 
-    [Header("Current Creature Properties")]
+    [Space]
     //Information Specific to individual versions of the creature
     public int currentLevel = 1;
     public int currentHealth;
     public SO_Item_Equip currentItemEquipped;
     public List<EStatusCondition> currentStatusConditions;
     //public List<Moves> currentMoves;
-
+    
     private int currentEquipIncrease_Health;
     private int currentEquipIncrease_Strength;
     private int currentEquipIncrease_Speed;
@@ -132,6 +134,70 @@ public class SO_CreatureData : ScriptableObject
         currentStatusConditions.Add(condition);
         return true;
     }
+
+    //Set the level of the Creature
+    public void SetLevel(int level)
+    {
+        currentLevel = level;
+    }
+    public void SetLevel_Random(int minLevel, int maxLevel)
+    {
+        currentLevel = Random.Range(minLevel, maxLevel);
+    }
+
+
+
+    //======================= CREATION FUNCTIONS ==========================//
+
+    public string GetFilePath()
+    {
+        return AssetDatabase.GetAssetPath(this);
+    }
+
+    [ContextMenu("Create Child Creature")]
+    public SO_CreatureData CreateChildCreature()
+    {
+        SO_CreatureData childCreature = CreateInstance<SO_CreatureData>();
+
+        #if UNITY_EDITOR
+        string assetPath = AssetDatabase.GetAssetPath(this);
+
+        childCreature.name = this.name + "_Child";
+        AssetDatabase.AddObjectToAsset(childCreature, assetPath);
+
+        childCreature.parentCreature = this;
+        FillInfoBasedOnParentCreature(this, childCreature);
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        #endif
+
+
+        return childCreature;
+    }
+
+    private void FillInfoBasedOnParentCreature(SO_CreatureData _parentCreature, SO_CreatureData _childCreature)
+    {
+        _childCreature.parentCreature = _parentCreature;
+
+        _childCreature.creatureName = _parentCreature.creatureName;
+        _childCreature.creatureDescrition = _parentCreature.creatureDescrition;
+        _childCreature.elementalType = _parentCreature.elementalType;
+        _childCreature.frontSprite = _parentCreature.frontSprite;
+        _childCreature.backSprite = _parentCreature.backSprite;
+
+        _childCreature.baseHealth = _parentCreature.baseHealth;
+        _childCreature.baseStrength = _parentCreature.baseStrength;
+        _childCreature.baseSpeed = _parentCreature.baseSpeed;
+        _childCreature.baseDefense = _parentCreature.baseDefense;
+
+        _childCreature.maxHealthMultiplier = _parentCreature.maxHealthMultiplier;
+        _childCreature.maxStrengthMultiplier = _parentCreature.maxStrengthMultiplier;
+        _childCreature.maxSpeedMultiplier = _parentCreature.maxSpeedMultiplier;
+        _childCreature.maxDefenseMultiplier = _parentCreature.maxDefenseMultiplier;
+    }
+
+
 
     public void Awake()
     {
