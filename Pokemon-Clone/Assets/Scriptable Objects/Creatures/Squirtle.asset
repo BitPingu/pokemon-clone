@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2253381318291485892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Creature Data_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 0}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 0}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 

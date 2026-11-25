@@ -10,6 +10,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public Vector3 PlayerSavedPos { get; set; }
+    private ItemPickup_Overworld isTouchingItem;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,5 +31,27 @@ public class PlayerCollision : MonoBehaviour
             //Start Battle
             GameManager.Instance.EventSender.EnterBattleEventSend();
         }
+
+       
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Item"))
+        {
+            isTouchingItem = collision.transform.GetComponent<ItemPickup_Overworld>();
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.transform.CompareTag("Item"))
+        {
+            isTouchingItem = null;
+        }
+    }
+
+    public ItemPickup_Overworld GetTouchedItem()
+    {
+        return isTouchingItem;
     }
 }
