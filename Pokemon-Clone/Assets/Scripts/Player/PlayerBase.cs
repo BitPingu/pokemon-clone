@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBase : CharacterBase
+public class PlayerBase : MonoBehaviour
 {
     // Singleton instance
     public static PlayerBase Instance { get; private set; }
 
-    // battle vars
-    private bool _prompt;
+    // Pokemon party
+    private List<CreatureInstance> _party = new List<CreatureInstance>();
 
-    private PlayerInputHandler inputManager;
+    // Pokemon base to instantiate from
+    [SerializeField] private GameObject _creatureBase;
+
+    // Current Pokemon (walking!!)
+    private GameObject _currentCreature;
 
     protected virtual void Awake()
     {
@@ -26,87 +30,48 @@ public class PlayerBase : CharacterBase
         }
     }
 
-    protected override void Start()
+    // Adds a creature to the player's party
+    public void AddCreature(SO_CreatureData creatureData)
     {
-        base.Start();
-
-        inputManager = GetComponentInChildren<PlayerInputHandler>();
-    }
-
-    public override void StartIdle()
-    {
-        base.StartIdle();
-
-        // anything here is called when entering the idle state
-
-        // player can move in idle state
-        GetComponent<PlayerMovement>().enabled = true;
-    }
-
-    public override void Idle()
-    {
-        base.Idle();
-
-        // anything here is called during the idle state through update()
-        
-        // move player movement code here?
-    }
-
-    public override void StartBattle()
-    {
-        base.StartBattle();
-
-        // anything here is called when entering the battle state
-
-        // player cannot move in battle state
-        GetComponent<PlayerMovement>().enabled = false;
-
-        // stop movement
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-    }
-
-    public override void Battle()
-    {
-        base.Battle();
-
-        // anything here is called during the battle state through update()
-
-        if (!IsTurn) return;
-
-        if (!_prompt)
-        {
-            // battle prompt
-            Debug.Log("It is the " + name + "'s turn");
-            Debug.Log("What will you do?");
-            Debug.Log("F: Fight | R: Run");
-            _prompt = true;
+        if (_party.Count >= 6) {
+            Debug.Log("Party is full!");
+            return; // party full! (send to pc?)
         }
 
-        if (inputManager.PressedFightThisFrame())
-        {
-            // Fight
-            BattleManager.Instance.Attack(this);
-            _prompt = false;
-        }
+        CreatureInstance creature = new CreatureInstance(creatureData);
+        _party.Add(creature);
 
-        if (inputManager.PressedRunThisFrame())
+        Debug.Log("Creatures in party:");
+        foreach (CreatureInstance caughtCreature in _party)
         {
-            // Run
-            if (UnityEngine.Random.Range(0, 2) == 0)
+            Debug.Log(caughtCreature.Name);
+        }
+    }
+
+    // Spawns a creature in the current scene
+    public void SpawnCreature(CreatureInstance creature, Vector3 position)
+    {
+        // only 1 active creature at a time
+        if (_currentCreature != null) Destroy(_currentCreature);
+
+        // instantiate at position
+        _currentCreature = Instantiate(_creatureBase, position, Quaternion.identity);
+
+        // assign current data
+        _currentCreature.GetComponent<CreatureBase>().Creature = creature;
+    }
+
+    // Gets the first healthy creature in the party
+    public CreatureInstance GetFirstHealthyCreature()
+    {
+        foreach (CreatureInstance creature in _party)
+        {
+            if (creature.CurrentHealth > 0)
             {
-                Debug.Log("Got away safely!");
-
-                // End Battle
-                BattleManager.Instance.End();
+                return creature;
             }
-            else
-            {
-                Debug.Log("Couldn't get away!");
-
-                // Pass turn
-                BattleManager.Instance.PassTurn(this);
-            }
-            _prompt = false;
         }
+
+        return null; // all creatures have fainted
     }
 }

@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     //Variables to keep track of
     // [SerializeField] private bool isBattling;
     [SerializeField] private PlayerBase player;
-    private Vector3 playerSavedPos;
+
+    [SerializeField] private SO_CreatureData starter;
 
     //Properties
     public SO_EventSender EventSender { get => eventSender; }
@@ -57,6 +58,19 @@ public class GameManager : MonoBehaviour
     }
 
 
+    private void Start()
+    {
+        // Starter pokemon
+        player.AddCreature(starter);
+
+        // spawn partner creature
+        CreatureInstance creature = player.GetFirstHealthyCreature();
+        player.SpawnCreature(creature, player.transform.position);
+
+        // follow player
+        GameObject.FindWithTag("CaughtPokemon").GetComponent<CreatureBase>().IsFollowing = true;
+    }
+
 
     private void EnterBattle()
     {
@@ -76,6 +90,7 @@ public class GameManager : MonoBehaviour
 
         // restore saved position
         player.transform.position = player.GetComponent<PlayerCollision>().PlayerSavedPos;
+        GameObject.FindWithTag("CaughtPokemon").transform.position = player.transform.position;
     }
 
 

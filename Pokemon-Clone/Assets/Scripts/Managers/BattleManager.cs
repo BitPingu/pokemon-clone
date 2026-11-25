@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +5,12 @@ public class BattleManager : MonoBehaviour
 {
     public static BattleManager Instance;
 
-    private CharacterBase player, enemy;
+    private PlayerBase p;
+    private CreatureBase player, enemy;
+
+    // player input
+    private PlayerInputHandler inputManager;
+    private bool _prompt;
 
     private void Awake()
     {
@@ -22,34 +25,44 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+    // called at the start of battle (when the battle scene loads)
     private void Start()
     {
-        // get the player and enemy
-        player = FindObjectOfType<PlayerBase>();
-        enemy = FindObjectOfType<EnemyBase>();
+        // get the player
+        p = GameObject.FindWithTag("Player").GetComponent<PlayerBase>();
+
+        // player input
+        inputManager = p.GetComponentInChildren<PlayerInputHandler>();
+
+        // get the player and enemy creatures
+        player = GameObject.FindWithTag("CaughtPokemon").GetComponent<CreatureBase>();
+        enemy = GameObject.FindWithTag("WildPokemon").GetComponent<CreatureBase>();
 
         // set battle positions
+        p.transform.position = new Vector3(-5f, 0, -5f);
         player.transform.position = new Vector3(-3, 0, -3);
         enemy.transform.position = new Vector3(6, 0, 2);
 
         // start battle (transition state)
-        player.IsBattling = true;
-        enemy.IsBattling = true;
+        player.GetComponent<CreatureBase>().IsBattling = true;
+        enemy.GetComponent<CreatureBase>().IsBattling = true;
 
-        Debug.Log("Player: " + player.CurrentHealth + "/" + player.MaxHealth
-            + " | Enemy: " + enemy.CurrentHealth + "/" + enemy.MaxHealth);
+        Debug.Log("A wild " + enemy.Creature.Name + " appeared!");
+        Debug.Log("Go " + player.Creature.Name + "!");
+
+        Debug.Log(player.Creature.Name + ": " + player.Creature.CurrentHealth + "/" + player.Creature.MaxHealth
+            + " | " + enemy.Creature.Name + ": " + enemy.Creature.CurrentHealth + "/" + enemy.Creature.MaxHealth);
 
         // player always goes first (for now)
-        player.IsTurn = true;
+        player.GetComponent<CreatureBase>().IsTurn = true;
     }
 
+    // battle ends (player or enemy faints, or run)
     public void End()
     {
         // Move this enemy to the scene to destroy it
         // (Currently enemies are always active in the overworld)
         SceneManager.MoveGameObjectToScene(enemy.gameObject, SceneManager.GetActiveScene());
-
-        // reset battle vars
 
         // Back to idle state
         player.IsBattling = false;
@@ -58,18 +71,19 @@ public class BattleManager : MonoBehaviour
         GameManager.Instance.EventSender.ExitBattleEventSend();
     }
 
-    public void PassTurn(CharacterBase passer)
+    // pass the turn to the opponent
+    public void PassTurn(CreatureBase passer)
     {
-        Debug.Log("Player: " + player.CurrentHealth + "/" + player.MaxHealth
-            + " | Enemy: " + enemy.CurrentHealth + "/" + enemy.MaxHealth);
+        Debug.Log(player.Creature.Name + ": " + player.Creature.CurrentHealth + "/" + player.Creature.MaxHealth
+            + " | " + enemy.Creature.Name + ": " + enemy.Creature.CurrentHealth + "/" + enemy.Creature.MaxHealth);
 
-        if (passer.Type == CharacterType.Player)
+        if (passer.gameObject.CompareTag("CaughtPokemon"))
         {
             // now enemy's turn
             player.IsTurn = false;
             enemy.IsTurn = true;
         }
-        else if (passer.Type == CharacterType.Enemy)
+        else if (passer.gameObject.CompareTag("WildPokemon"))
         {
             // now player's turn
             enemy.IsTurn = false;
@@ -77,41 +91,102 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void Attack(CharacterBase attacker)
+    // player's turn
+    public void PlayerTurn(CreatureBase attacker)
     {
-        CharacterBase receiver = null;
+        // battle prompt
+        if (!_prompt)
+        {
+            Debug.Log("What will " + attacker.Creature.Name + " do?");
+            Debug.Log("F: Fight | C: Catch | R: Run");
+            _prompt = true;
+        }
 
-        if (attacker.Type == CharacterType.Player)
+        if (inputManager.PressedFightThisFrame())
+        {
+            // Fight
+            Attack(attacker);
+            _prompt = false;
+        }
+
+        if (inputManager.PressedCatchThisFrame())
+        {
+            Debug.Log("Player used a Pokeball!");
+            Debug.Log("*wobble*");
+            Debug.Log("*wobble*");
+            // Catch
+            if (Random.Range(0, 2) == 0)
+            {
+                // Success
+                Caught();
+            }
+            else
+            {
+                Debug.Log("Aww! It appeared to be caught!");
+
+                // Pass turn
+                PassTurn(attacker);
+            }
+            _prompt = false;
+        }
+
+        if (inputManager.PressedRunThisFrame())
+        {
+            // Run
+            if (Random.Range(0, 2) == 0)
+            {
+                Debug.Log("Got away safely!");
+
+                // End Battle
+                End();
+            }
+            else
+            {
+                Debug.Log("Couldn't get away!");
+
+                // Pass turn
+                PassTurn(attacker);
+            }
+            _prompt = false;
+        }
+    }
+
+    // attack the opponent
+    public void Attack(CreatureBase attacker)
+    {
+        CreatureBase receiver = null;
+
+        if (attacker.gameObject.CompareTag("CaughtPokemon"))
         {
             receiver = enemy;
         }
-        else if (attacker.Type == CharacterType.Enemy)
+        else if (attacker.gameObject.CompareTag("WildPokemon"))
         {
             receiver = player;
         }
 
-        Debug.Log(attacker.name + " attacks!");
+        Debug.Log(attacker.Creature.Name + " attacks!");
 
         // Deal damage based on strength (atk) stat
-        int amount = attacker.Strength;
+        int amount = attacker.Creature.Strength;
 
-        receiver.Damage(amount);
+        receiver.Creature.Damage(amount);
 
-        if (receiver.CurrentHealth > 0)
+        if (receiver.Creature.CurrentHealth > 0)
         {
             // Pass turn
             PassTurn(attacker);
         }
         else
         {
-            Debug.Log(attacker.name + " defeated " + receiver.name + "!");
+            Debug.Log(attacker.Creature.Name + " defeated " + receiver.Creature.Name + "!");
             
-            if (attacker.Type == CharacterType.Player)
+            if (attacker.CompareTag("CaughtPokemon"))
             {
                 // End Battle
                 End();
             }
-            else if (attacker.Type == CharacterType.Enemy)
+            else if (attacker.CompareTag("WildPokemon"))
             {
                 // Game over
                 Debug.Log("game over");
@@ -125,5 +200,17 @@ public class BattleManager : MonoBehaviour
                 #endif
             }
         }
+    }
+
+    // catch the opponent
+    public void Caught()
+    {
+        Debug.Log("Gotcha! " + enemy.Creature.Name + " was caught!");
+
+        // Add to party
+        p.AddCreature(enemy.Creature.CreatureData);
+
+        // End Battle
+        End();
     }
 }

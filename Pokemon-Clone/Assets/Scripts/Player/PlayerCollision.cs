@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This script is on the Player Prefab.
@@ -14,19 +15,18 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("WildPokemon") && other.GetComponent<EnemyBase>())
+        // Encounter Pokemon in the overworld
+        if (other.CompareTag("WildPokemon") && SceneManager.GetActiveScene().name == "Overworld")
         {
-            // Get enemy
-            EnemyBase enemy = other.GetComponent<EnemyBase>();
-
             // Get the normalized direction from the enemy back to player
-            Vector3 directionToSelf = (transform.position - enemy.transform.position).normalized;
+            Vector3 directionToSelf = (transform.position - other.transform.position).normalized;
 
             // Save player position away from enemy for reload
-            PlayerSavedPos = enemy.transform.position + (directionToSelf * 3f);
+            PlayerSavedPos = other.transform.position + (directionToSelf * 3f);
 
-            // Save enemy
-            DontDestroyOnLoad(enemy);
+            // Save partner and enemy
+            DontDestroyOnLoad(GameObject.FindWithTag("CaughtPokemon"));
+            DontDestroyOnLoad(other);
 
             //Start Battle
             GameManager.Instance.EventSender.EnterBattleEventSend();
