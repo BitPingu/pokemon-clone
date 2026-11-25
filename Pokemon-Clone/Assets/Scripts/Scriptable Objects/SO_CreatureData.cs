@@ -157,6 +157,12 @@ public class SO_CreatureData : ScriptableObject
     [ContextMenu("Create Child Creature")]
     public SO_CreatureData CreateChildCreature()
     {
+        if(this.parentCreature != null)
+        {
+            Debug.LogWarning("Trying to make a child of a child. Ensure it is a parentCreature");
+            return null;
+        }
+
         SO_CreatureData childCreature = CreateInstance<SO_CreatureData>();
 
         #if UNITY_EDITOR
