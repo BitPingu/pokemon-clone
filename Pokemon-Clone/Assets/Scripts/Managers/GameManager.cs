@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         // isBattling = false;
         Debug.Log("GameManager - Exiting Battle Scene");
         // eventSender.EnableInputEventSend(true);
-        SceneManager.LoadScene("Overworld");
+        SceneManager.LoadScene("Overworld_old");
 
         // restore saved position
         player.transform.position = player.GetComponent<PlayerCollision>().PlayerSavedPos;

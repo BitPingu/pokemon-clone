@@ -16,7 +16,7 @@ public class PlayerCollision : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Encounter Pokemon in the overworld
-        if (other.CompareTag("WildPokemon") && SceneManager.GetActiveScene().name == "Overworld")
+        if (other.CompareTag("WildPokemon") && SceneManager.GetActiveScene().name == "Overworld_old")
         {
             // Get the normalized direction from the enemy back to player
             Vector3 directionToSelf = (transform.position - other.transform.position).normalized;
