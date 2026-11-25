@@ -16,6 +16,6 @@ MonoBehaviour:
   itemDescription: 
   itemType: 3
   itemSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  creaturesAbleToUseMove:
-  - {fileID: 11400000, guid: 8b0aca5d464244c4e85fe566153f4a6a, type: 2}
-  - {fileID: 11400000, guid: a22bca2c07bb0354ab78d2b7dd3c9504, type: 2}
+  creaturesAbleToLearnMove:
+  - {fileID: 11400000, guid: 8fdd17dfa7f2194418e455e9eaa9f661, type: 2}
+  - {fileID: 11400000, guid: 68faaef7cd6099044b44c21c486e6ea3, type: 2}

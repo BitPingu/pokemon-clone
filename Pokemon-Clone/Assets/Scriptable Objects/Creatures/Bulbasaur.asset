@@ -15,21 +15,22 @@ MonoBehaviour:
   parentCreature: {fileID: 0}
   creatureName: Bulbasaur
   creatureDescrition: Creature Description
-  elementalType: 
+  elementalType: 0300000005000000
   frontSprite: {fileID: 0}
   backSprite: {fileID: 0}
-  baseHealth: 71
-  baseStrength: 72
-  baseSpeed: 72
-  baseDefense: 72
-  maxHealthMultiplier: 10
+  baseHealth: 77
+  baseStrength: 59
+  baseSpeed: 36
+  baseDefense: 64
+  maxHealthMultiplier: 5
   maxStrengthMultiplier: 1
   maxSpeedMultiplier: 1
   maxDefenseMultiplier: 1
   currentLevel: 1
-  currentHealth: 71
-  currentItemEquipped: {fileID: 0}
-  currentStatusConditions: 
+  currentHealth: 66
+  currentItemEquipped: {fileID: 11400000, guid: abb37350d5a1bc84582197ce3cdc4545,
+    type: 2}
+  currentStatusConditions: 0400000001000000
 --- !u!114 &1338584615334505694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +58,7 @@ MonoBehaviour:
   maxSpeedMultiplier: 1
   maxDefenseMultiplier: 1
   currentLevel: 68
-  currentHealth: 114
+  currentHealth: 1562
   currentItemEquipped: {fileID: 11400000, guid: abb37350d5a1bc84582197ce3cdc4545,
     type: 2}
   currentStatusConditions: 02000000
