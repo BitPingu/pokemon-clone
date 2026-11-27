@@ -1,5 +1,275 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8398348026505955215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-7830019628115764863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-6660434652643637293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-6652386088355081845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-4597523684054806336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-4038560076027973303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-3832591996109468480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 2
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-3744958509090027900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-2107142238324776038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,6 +300,66 @@ MonoBehaviour:
   currentHealth: 24
   currentItemEquipped: {fileID: 0}
   currentStatusConditions: 
+--- !u!114 &1154297409539509921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &1587850018746774202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 2
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
 --- !u!114 &1877243027999329605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,6 +387,126 @@ MonoBehaviour:
   maxSpeedMultiplier: 1
   maxDefenseMultiplier: 1
   currentLevel: 88
+  currentHealth: 696
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &3483642016991173325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &4665298520783642543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
   currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &6558072236582047921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 3
+  currentHealth: 24
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &6728969913067452071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Charmander_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Charmander
+  creatureDescrition: Creature Description CHARR
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 24
+  baseStrength: 33
+  baseSpeed: 32
+  baseDefense: 31
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 24
   currentItemEquipped: {fileID: 0}
   currentStatusConditions: 

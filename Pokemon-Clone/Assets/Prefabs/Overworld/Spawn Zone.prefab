@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 164652420282810618}
   - component: {fileID: 2703285897621558259}
   m_Layer: 0
-  m_Name: Random Creature Spawner - Route 1
+  m_Name: Spawn Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,3 +50,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a22bca2c07bb0354ab78d2b7dd3c9504, type: 2}
   - {fileID: 11400000, guid: b53cc75d0a236284dbc6f2342fe259fd, type: 2}
   levelRange: {x: 1, y: 5}
+  spawnZoneID: 0
+  spawnZoneColour: {r: 1, g: 1, b: 1, a: 0.2}

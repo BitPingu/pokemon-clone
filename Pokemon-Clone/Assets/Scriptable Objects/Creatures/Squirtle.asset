@@ -60,3 +60,213 @@ MonoBehaviour:
   currentHealth: 50
   currentItemEquipped: {fileID: 0}
   currentStatusConditions: 
+--- !u!114 &388745973564473611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 2
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &1610337289729661466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &4030351946220223982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 4
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &4314259970901464160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &4980787022288166600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &7504983274456633510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &7892702091547593862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Squirtle_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Squirtle
+  creatureDescrition: Creature Description
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 50
+  baseStrength: 50
+  baseSpeed: 50
+  baseDefense: 50
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 

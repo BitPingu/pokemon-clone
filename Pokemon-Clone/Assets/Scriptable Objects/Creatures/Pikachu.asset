@@ -1,5 +1,305 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8204230105612638853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-7960935685670862693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-7346126701100497680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 2
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-7109734736909995140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-5580677423642309668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 2
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-4564509897435217303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-2605120693131752323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-2131022679580813481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-243308834665133959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &-152513744433536398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 2
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +327,96 @@ MonoBehaviour:
   maxSpeedMultiplier: 1
   maxDefenseMultiplier: 1
   currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &4767130066292334394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 64
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &5981127097610166843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 1
+  currentHealth: 50
+  currentItemEquipped: {fileID: 0}
+  currentStatusConditions: 
+--- !u!114 &7021956680607210861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42ca06f8bf3a824da82ec685f7aebee, type: 3}
+  m_Name: Pikachu_Child
+  m_EditorClassIdentifier: 
+  parentCreature: {fileID: 11400000}
+  creatureName: Pikachu
+  creatureDescrition: Pika electric mouse
+  elementalType: 
+  frontSprite: {fileID: 0}
+  backSprite: {fileID: 0}
+  baseHealth: 64
+  baseStrength: 30
+  baseSpeed: 50
+  baseDefense: 71
+  maxHealthMultiplier: 1
+  maxStrengthMultiplier: 1
+  maxSpeedMultiplier: 1
+  maxDefenseMultiplier: 1
+  currentLevel: 2
   currentHealth: 64
   currentItemEquipped: {fileID: 0}
   currentStatusConditions: 

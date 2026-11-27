@@ -424,7 +424,7 @@ PrefabInstance:
     - target: {fileID: 7773200699115206139, guid: d2cb9e71cdb559940b51015722778685,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7773200699115206139, guid: d2cb9e71cdb559940b51015722778685,
         type: 3}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 1039821082}
   - component: {fileID: 1039821081}
   - component: {fileID: 1039821080}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1396,7 @@ MonoBehaviour:
   lookAheadCatchupSpeed: 4.47
   lookAheadXPos: 11.6
   lookAheadZPos: 11.52
-  showGizmos: 1
+  showGizmos: 0
 --- !u!1001 &2985958039347797757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1504,18 +1504,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164652420282810618, guid: 676ee6c23d27dda468f395b481fdef38,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 14.707
+      objectReference: {fileID: 0}
+    - target: {fileID: 164652420282810618, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.672834
+      objectReference: {fileID: 0}
+    - target: {fileID: 164652420282810618, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.686694
+      objectReference: {fileID: 0}
+    - target: {fileID: 164652420282810618, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 8.66
       objectReference: {fileID: 0}
     - target: {fileID: 164652420282810618, guid: 676ee6c23d27dda468f395b481fdef38,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 164652420282810618, guid: 676ee6c23d27dda468f395b481fdef38,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -12.94
       objectReference: {fileID: 0}
     - target: {fileID: 164652420282810618, guid: 676ee6c23d27dda468f395b481fdef38,
         type: 3}
@@ -1555,7 +1570,48 @@ PrefabInstance:
     - target: {fileID: 912793799214571166, guid: 676ee6c23d27dda468f395b481fdef38,
         type: 3}
       propertyPath: m_Name
-      value: Random Creature Spawner - Route 1
+      value: Spawn Zone - 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: creatureGO
+      value: 
+      objectReference: {fileID: 1676921249279021057, guid: d2cb9e71cdb559940b51015722778685,
+        type: 3}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: spawnZoneColour.a
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: spawnZoneColour.b
+      value: 0.2216981
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: spawnZoneColour.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: spawnZoneColour.r
+      value: 0.30111662
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: spawnNextCreatureDelayRange.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: spawnNextCreatureDelayRange.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703285897621558259, guid: 676ee6c23d27dda468f395b481fdef38,
+        type: 3}
+      propertyPath: initialDelayRangeBeforeSpawning.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1575,6 +1631,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wild Pokemon
       objectReference: {fileID: 0}
+    - target: {fileID: 2660173178112735159, guid: d2cb9e71cdb559940b51015722778685,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508639852931746188, guid: d2cb9e71cdb559940b51015722778685,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508639852931746188, guid: d2cb9e71cdb559940b51015722778685,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778882990715827133, guid: d2cb9e71cdb559940b51015722778685,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.635
+      objectReference: {fileID: 0}
     - target: {fileID: 7773200699115206139, guid: d2cb9e71cdb559940b51015722778685,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1583,7 +1659,7 @@ PrefabInstance:
     - target: {fileID: 7773200699115206139, guid: d2cb9e71cdb559940b51015722778685,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7773200699115206139, guid: d2cb9e71cdb559940b51015722778685,
         type: 3}

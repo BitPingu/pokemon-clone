@@ -6,11 +6,12 @@ TagManager:
   tags:
   - WildPokemon
   - CaughtPokemon
+  - Item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
