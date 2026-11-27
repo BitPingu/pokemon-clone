@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b847fb719f27b5741a84beb7894f2be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePool:
-  - {fileID: 11400000, guid: 8fdd17dfa7f2194418e455e9eaa9f661, type: 2}
-  - {fileID: 11400000, guid: 8b0aca5d464244c4e85fe566153f4a6a, type: 2}
-  - {fileID: 11400000, guid: a22bca2c07bb0354ab78d2b7dd3c9504, type: 2}
-  - {fileID: 11400000, guid: b53cc75d0a236284dbc6f2342fe259fd, type: 2}
+  creatureGO: {fileID: 0}
+  creaturePool: []
   levelRange: {x: 1, y: 5}
+  maxCreaturesSpawnedAtATime: 5
+  initialDelayRangeBeforeSpawning: {x: 0, y: 0}
+  spawnNextCreatureDelayRange: {x: 0, y: 0}
   spawnZoneID: 0
   spawnZoneColour: {r: 1, g: 1, b: 1, a: 0.2}

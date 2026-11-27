@@ -165,17 +165,21 @@ public class SO_CreatureData : ScriptableObject
 
         SO_CreatureData childCreature = CreateInstance<SO_CreatureData>();
 
-        #if UNITY_EDITOR
-        string assetPath = AssetDatabase.GetAssetPath(this);
-
-        childCreature.name = this.name + "_Child";
-        AssetDatabase.AddObjectToAsset(childCreature, assetPath);
-
-        childCreature.parentCreature = this;
         FillInfoBasedOnParentCreature(this, childCreature);
+        childCreature.name = this.name + "_Child";
+        childCreature.parentCreature = this;
 
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
+        //If we're creating this creature in the editor and not through the game we should add it to the scriptable object parent
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+        {
+            string assetPath = AssetDatabase.GetAssetPath(this);
+
+            AssetDatabase.AddObjectToAsset(childCreature, assetPath);
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
         #endif
 
 
@@ -185,7 +189,7 @@ public class SO_CreatureData : ScriptableObject
     private void FillInfoBasedOnParentCreature(SO_CreatureData _parentCreature, SO_CreatureData _childCreature)
     {
         _childCreature.parentCreature = _parentCreature;
-
+        
         _childCreature.creatureName = _parentCreature.creatureName;
         _childCreature.creatureDescrition = _parentCreature.creatureDescrition;
         _childCreature.elementalType = _parentCreature.elementalType;
@@ -203,7 +207,14 @@ public class SO_CreatureData : ScriptableObject
         _childCreature.maxDefenseMultiplier = _parentCreature.maxDefenseMultiplier;
     }
 
-
+    [ContextMenu("Delete")]
+    public void DeleteInstance()
+    {
+        AssetDatabase.RemoveObjectFromAsset(this);
+        Object.DestroyImmediate(this, true);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
 
     public void Awake()
     {
