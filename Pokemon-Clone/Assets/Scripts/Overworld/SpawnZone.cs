@@ -109,7 +109,8 @@ public class SpawnZone : MonoBehaviour
     //Spawns creatures up to the max allowed based on random draws from the pool
     private IEnumerator SpawnCreatureRoutine()
     {
-        float groundY = GetGroundY();
+        float groundY = HelperFunctions.GetGroundY(transform.position);
+
         yield return new WaitForSeconds(Random.Range(initialDelayRangeBeforeSpawning.x, initialDelayRangeBeforeSpawning.y));
 
         for(int i = 0; i < maxCreaturesSpawnedAtATime; i++)
@@ -128,22 +129,6 @@ public class SpawnZone : MonoBehaviour
             enemyBase.UpdateMaterialSprite();
         }
     }
-
-    //Finds the ground
-    private float GetGroundY()
-    {
-        //Shoot ray downwards til hit ground
-        RaycastHit hit;
-        bool hitGround = Physics.Raycast(transform.position, Vector3.down, out hit, 1000, LayerMask.GetMask("Ground"));
-        
-        if(hitGround)
-        {
-            return hit.point.y;
-        }
-        return transform.position.y;
-
-    }
-
 
 
 

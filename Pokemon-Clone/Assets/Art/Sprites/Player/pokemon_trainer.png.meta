@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -121,18 +121,370 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pokemon_trainer_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 192.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbf71b1681b1bb498c44f9288aa635e
+      internalID: -1042900494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 192.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1ed2bce3089eb49891b0a86a7d7dd1
+      internalID: 835107273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778d7b92b7e68864fb86648fbc357281
+      internalID: 446747656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_3
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 192.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b905151a66061cc46a54411106d5f1ab
+      internalID: 41703943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 129.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfccfae7a256e99438bc54918bafa985
+      internalID: -11021455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 129.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596bcf4e6be46ac4790d320599518faa
+      internalID: -692338203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 129.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde0d87d6b88b2a478333d1e0f589337
+      internalID: 1983575073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_7
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 129.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a5b9bef7f40bd4ea5b00b4bbee3b89
+      internalID: 60465299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 66.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb99bccc5dca39409fc678fcfaf325b
+      internalID: 483621460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 66.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fda1f45d8e5df14e8639ae32e5af9e6
+      internalID: 1301882786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 66.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c866fe97141b0c242ab24cdee84e65d4
+      internalID: 1631778257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_11
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 66.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87270973f1993f74e897a577dd0f69b7
+      internalID: -2129640180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393a3a94fde39c14d9eef2d97d48d62c
+      internalID: 840935366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_13
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 3.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d084c938f55c9c644b505c0ee769383f
+      internalID: -853889348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bcdc7045657d1428ef181c8778594a
+      internalID: -1173975390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pokemon_trainer_15
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 3.5
+        width: 61.5
+        height: 61.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71244127b6efd2c4f933cdcca46275c0
+      internalID: -1890698215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 85811a6b808e4784781b94bc63333608
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pokemon_trainer_0: -1042900494
+      pokemon_trainer_1: 835107273
+      pokemon_trainer_10: 1631778257
+      pokemon_trainer_11: -2129640180
+      pokemon_trainer_12: 840935366
+      pokemon_trainer_13: -853889348
+      pokemon_trainer_14: -1173975390
+      pokemon_trainer_15: -1890698215
+      pokemon_trainer_2: 446747656
+      pokemon_trainer_3: 41703943
+      pokemon_trainer_4: -11021455
+      pokemon_trainer_5: -692338203
+      pokemon_trainer_6: 1983575073
+      pokemon_trainer_7: 60465299
+      pokemon_trainer_8: 483621460
+      pokemon_trainer_9: 1301882786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

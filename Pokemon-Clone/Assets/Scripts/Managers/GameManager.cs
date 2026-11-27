@@ -93,6 +93,10 @@ public class GameManager : MonoBehaviour
         GameObject.FindWithTag("CaughtPokemon").transform.position = player.transform.position;
     }
 
+    public SO_CreatureData GetStarterCreature()
+    {
+        return starter;
+    }
 
     //Getters and Setters
     // public bool GetIsBattling()

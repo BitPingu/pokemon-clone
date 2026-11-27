@@ -55,7 +55,7 @@ public class PlayerBase : MonoBehaviour
         if (_currentCreature != null) Destroy(_currentCreature);
 
         // instantiate at position
-        _currentCreature = Instantiate(_creatureBase, position, Quaternion.identity);
+        _currentCreature = Instantiate(_creatureBase, position + Vector3.right * 2, Quaternion.identity);
 
         // assign current data
         _currentCreature.GetComponent<CreatureBase>().Creature = creature;

@@ -9,9 +9,19 @@ public class EnemyBase : MonoBehaviour
 
     private void Start()
     {
-        // set creature data for wild pokemon
-        GetComponent<CreatureBase>().Creature = new CreatureInstance(creature);
-        UpdateMaterialSprite();
+        if(gameObject.CompareTag("CaughtPokemon"))
+        {
+            // set creature data for wild pokemon
+            creature = GameManager.Instance.GetStarterCreature();
+            UpdateMaterialSprite();
+        }
+        else
+        {
+            // set creature data for wild pokemon
+            GetComponent<CreatureBase>().Creature = new CreatureInstance(creature);
+            UpdateMaterialSprite();
+        }
+          
     }
 
     public void OnValidate()
